@@ -1,0 +1,7 @@
+/* CSS declarations go here */
+.hidden_div{
+  display:none;
+}
+#err_msg {
+  float: right;
+}
