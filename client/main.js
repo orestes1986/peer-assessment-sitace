@@ -29,3 +29,7 @@ Router.route('/details/:_id', function () {
 Accounts.ui.config({
   passwordSignupFields: "USERNAME_AND_EMAIL",
 });
+Template.body.onCreated(function bodyOnCreated() {
+  Meteor.subscribe('userData');
+  Meteor.subscribe('websiteData');
+});

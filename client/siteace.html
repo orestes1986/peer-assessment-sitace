@@ -9,6 +9,16 @@
 </template>
 
 <template name="welcome">
+
+  <div id="suggestions">
+    <b>Suggested sites: </b>
+    {{>suggested_list}}
+    <br />
+    <div id="keyWords">
+	<i>Based on the keywords</i>
+	{{>keywords_list}}
+    </div>
+  </div>
   <div class="container">
     {{> website_form}}
     {{> website_list}}
@@ -25,6 +35,15 @@
 	<a class="navbar-brand" href="#">
 	  {{> loginButtons}}
 	</a>
+        <form class="navbar-form pull-right js-navbar-form" role="search">
+	  <div class="input-group">
+	      <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+	      <div class="input-group-btn js-search">
+<!--       <button type="submit" class="btn btn-default">Submit</button> -->
+		  <button type="submit" class="btn btn-default js-search"><i class="glyphicon glyphicon-search"></i></button>
+	      </div>
+	  </div>
+        </form>
       </div>
     </div>
   </nav>
@@ -65,6 +84,32 @@
 </template>
 
 <!-- template that displays individual website entries -->
+<template name="suggested_list">
+  <ol>
+    {{#each suggestedWebsites}}
+    {{>suggested_website}}
+    {{/each}}
+  </ol>
+</template>
+<template name="suggested_website">
+  <li>
+    <a href="{{url}}">{{title}}</a>
+  </li>
+</template>
+<template name="keywords_list">
+  <ol>
+    {{#each keywords}}
+    {{>founded_keywords}}
+    {{/each}}
+  </ol>
+</template>
+<template name="founded_keywords">
+  <li>
+    <i>
+      {{this}}<b>,</b>
+    </i>
+  </li>
+</template>
 <template name="website_item">
   <li>
     <p>

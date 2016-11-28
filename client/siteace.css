@@ -5,3 +5,20 @@
 #err_msg {
   float: right;
 }
+#suggestions {
+  float: right;  
+}
+#suggestions {
+  width: 30%;
+}
+#keyWords li {
+/*   width: 10%; */
+/*   float: right; */
+  display: inline;
+}
+#keyWords li b {
+  font-size: 150%;
+}
+#website_form {
+  max-width: 60%;
+}
